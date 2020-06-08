@@ -1,0 +1,25 @@
+{
+  "name": "beast-stuff",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firedevs-team/beast-stuff.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/firedevs-team/beast-stuff/issues"
+  },
+  "homepage": "https://github.com/firedevs-team/beast-stuff#readme",
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.7.1",
+    "faker": "^4.1.0",
+    "node-fetch": "^2.6.0",
+    "unsplash-js": "^6.0.0"
+  }
+}
