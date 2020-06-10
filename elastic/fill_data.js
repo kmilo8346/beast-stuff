@@ -2,7 +2,7 @@ const { Client } = require("@elastic/elasticsearch");
 const faker = require("./lib/faker");
 
 const config = {
-  createIndex: true,
+  createIndex: false,
   indexDummyData: true,
 };
 const client = new Client({
@@ -14,21 +14,38 @@ const client = new Client({
 });
 
 const createIndex = async () => {
+  const data = faker.getData();
+  for (let i = 0; i < data.stores.length; i++) {
+    const store = data.stores[i];
+    await await client.indices.create({
+      index: `products-${store.id}`,
+      body: {
+        mappings: {
+          properties: {
+            type: { type: "keyword" },
+            description: { type: "text" },
+            format: { type: "text" },
+            store: {
+              properties: {
+                id: { type: "keyword" },
+                delivery_time: { type: "integer_range" },
+                delivery_area: { type: "geo_shape" },
+              },
+            },
+          },
+        },
+      },
+    });
+  }
+
   await await client.indices.create({
-    index: "products",
+    index: "stores",
     body: {
       mappings: {
         properties: {
-          type: { type: "keyword" },
-          description: { type: "text" },
-          format: { type: "text" },
-          store: {
-            properties: {
-              id: { type: "keyword" },
-              delivery_time: { type: "integer_range" },
-              delivery_area: { type: "geo_shape" },
-            },
-          },
+          id: { type: "keyword" },
+          delivery_time: { type: "integer_range" },
+          delivery_area: { type: "geo_shape" },
         },
       },
     },
@@ -36,13 +53,26 @@ const createIndex = async () => {
 };
 
 const indexDummyData = async () => {
-  for (let i = 0; i < 100; i++) {
-    const { id, ...product } = faker.createProduct();
+  const data = faker.getData();
+  for (let i = 0; i < data.stores.length; i++) {
+    const store = data.stores[i];
+    const { id, ...storeData } = store;
     await client.index({
       id,
-      index: "products",
+      index: "stores",
       refresh: true,
-      body: product,
+      body: storeData,
+    });
+  }
+
+  for (let i = 0; i < data.products.length; i++) {
+    const product = data.products[i];
+    const { id, ...productData } = product;
+    await client.index({
+      id,
+      index: `products-${product.store.id}`,
+      refresh: true,
+      body: productData,
     });
   }
 };

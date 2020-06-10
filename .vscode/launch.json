@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Faker",
-      "program": "${workspaceFolder}/elastic/lib/faker.js",
+      "program": "${workspaceFolder}/elastic/lib/faker/index.js",
       "skipFiles": ["<node_internals>/**"]
     },
     {
