@@ -2,7 +2,7 @@ const { Client } = require("@elastic/elasticsearch");
 const faker = require("./lib/faker");
 
 const config = {
-  createIndex: false,
+  createIndex: true,
   indexDummyData: true,
 };
 const client = new Client({

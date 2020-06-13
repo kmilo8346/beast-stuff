@@ -8,6 +8,7 @@ const getData = () => {
   const products = [];
   data.products = data.products.map((product) => ({
     ...product,
+    images: Array.isArray(product.images) ? product.images : [product.images],
     id: faker.random.uuid(),
   }));
   for (let i = 0; i < data.stores.length; i++) {
