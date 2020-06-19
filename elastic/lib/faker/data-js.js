@@ -1,7 +1,47 @@
 export default [
   {
     store: {
-      id: 'cf8e05f8-e2fb-43cc-88e7-1e5e86456cd5',
+      id: 'cf8e05f8-e2fb-43cc-88e7-1e5e86356cd5',
+      name: 'Repartidor en Bicicleta - Emilio',
+      images: [
+        'https://gilipatisserie.files.wordpress.com/2015/02/sam_2401-1.jpg',
+        'https://i.pinimg.com/originals/42/d7/ac/42d7ac4db6d051b0ae210db2182ebddb.jpg',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSco3ErQaRcZ-iFu_le7_RWNyPLGp-0IvBBr7yIx0EiB7RxnNlS&s',
+      ],
+      delivery_time: {
+        gte: 20,
+        lte: 30,
+      },
+      delivery_area: {
+        type: 'Polygon',
+        coordinates: [
+          [
+            [-70.63239097595215, -33.44750279318312],
+            [-70.63375353813171, -33.44773554607255],
+            [-70.6336784362793, -33.449248424629594],
+            [-70.63174724578856, -33.449731824049195],
+            [-70.63239097595215, -33.44750279318312],
+          ],
+        ],
+      },
+    },
+    products: [
+      {
+        type: 'service',
+        name: 'Repartidor en bicicleta',
+        description:
+          'Reparto paquetes a toda el área de Santiago Centro, Ñuñoa y Providencia',
+        images:
+          'https://ae01.alicdn.com/kf/HTB1cOhOaFmWBuNjSspdq6zugXXa5/Manos-manicura-sal-n-hogar-arte-decoraci-n-madera-marco-cartel-de-tela-aceptar-personalizaci-n.jpg',
+        price: 0,
+        tags: ['servicios', 'mensages', 'delivery', 'bicicleta', 'domicilio'],
+        categories: ['delivery', 'servicios'],
+      },
+    ],
+  },
+  {
+    store: {
+      id: 'cf8e05f8-e23b-43cc-88e7-1e5e86456cd5',
       name: 'Dulces Finos Vicuña',
       images: [
         'https://gilipatisserie.files.wordpress.com/2015/02/sam_2401-1.jpg',
@@ -212,7 +252,7 @@ export default [
   },
   {
     store: {
-      id: 'cf8e05f8-e2fb-43cc-88e7-1e5e86456cd2',
+      id: 'cg8e05f8-e2fb-43cc-88e7-1e5e86456cd2',
       images: [
         'https://chefandhotel.cl/images/ediciones/2019_02/la_folia_pasteleria/Pasteleria-La-Folia-chefandhotel-17.jpg',
         'https://www.pastelesdefantasia.com/wp-content/uploads/2013/11/pasteleria.jpg',
@@ -422,7 +462,7 @@ export default [
   },
   {
     store: {
-      id: 'cf8e05f8-e2fb-43cc-88e7-1e5e86456cd3',
+      id: 'cf8e05f5-e2fb-43cc-88e7-1e5e86456cd3',
       images: [
         'https://mtraiguen.cl/vitrina/wp-content/uploads/2020/04/MINIMARKET.jpg',
         'https://apollo-virginia.akamaized.net/v1/files/s8elutw7hnox-CO/image;s=850x0',
@@ -632,7 +672,7 @@ export default [
   },
   {
     store: {
-      id: 'cf8e05f8-e2fb-43cc-88e7-1e5e86456cd1',
+      id: 'cf8e05f8-e2fb-43cc-81e7-1e5e86456cd1',
       images: [
         'https://www.datoavisos.cl/wp-content/uploads/2018/10/electricista.jpg',
         'https://www.elplural.com/uploads/s1/35/04/0/un-electricista-trabajando-0.jpeg',
@@ -730,7 +770,7 @@ export default [
   },
   {
     store: {
-      id: 'cf8e05f8-e2fb-43cc-88e7-1e5e86456cd4',
+      id: 'cf8e05f8-e1fb-43cc-88e7-1e5e86456cd4',
       images: [
         'https://ae01.alicdn.com/kf/HTB1cOhOaFmWBuNjSspdq6zugXXa5/Manos-manicura-sal-n-hogar-arte-decoraci-n-madera-marco-cartel-de-tela-aceptar-personalizaci-n.jpg',
         'https://rocnature.com/subidas/6531508142441.png',
